@@ -94,19 +94,31 @@ const MainPage = () => {
       {/* 하단 고정 네비게이션 */}
       <nav className="fixed bottom-0 left-0 w-full bg-white border-t shadow-md flex justify-around py-3 text-[12px] text-gray-600">
         <button onClick={() => navigate('/cart')}className="flex flex-col items-center">
-          <div className="text-xl">🛒</div>
+          <img src ="/cart ikon.png"
+          alt="장바구니"
+          classname="mb-1 object-contain"
+          style={{width: '30px', height: '27px'}}/>
           장바구니
         </button>
         <button  className="flex flex-col items-center text-blue-500 font-bold">
-          <div className="text-xl">🏠</div>
+          <img src="/home ikon.png" 
+          alt="홈" 
+          classname="mb-1 object-contain"
+          style={{width: '30px', height: '27px'}}/>
           홈
         </button>
-        <button className="flex flex-col items-center">
-          <div className="text-xl">📦</div>
+        <button onClick={() => navigate('/receipt')} className="flex flex-col items-center">
+          <img src = "/receipt ikon.png"
+          alt="주문내역"
+          classname="mb-1 object-contain"
+          style={{width: '30px', height: '27px'}}/>
           주문내역
         </button>
         <button onClick={() => navigate('/mypage')} className="flex flex-col items-center">
-          <span className="text-lg">👤</span>
+          <img src = "/mypage ikon.png"
+          alt="마이페이지"
+          classname="mb-1 object-contain"
+          style={{width: '30px', height: '27px'}}/>
           마이페이지
         </button>
       </nav>

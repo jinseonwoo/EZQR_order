@@ -14,10 +14,10 @@ const menuData = {
     { name: '치즈 스틱', price: '2개 : 2,000원', image: '/cheesestic.png' },
   ],
   음료: [
-    { name: '콜라', price: '500ml : 2,000원', image: '/cola500.png' },
-    { name: '콜라', price: '1.25L : 3,000원', image: '/cola1.25.png' },
-    { name: '사이다', price: '500ml : 2,000원', image: '/cider500.png' },
-    { name: '사이다', price: '1.25L : 3,000원', image: '/cider1.25.png'}
+    { name: '콜라 500ml', price: '500ml : 2,000원', image: '/cola500.png' },
+    { name: '콜라 1.25L', price: '1.25L : 3,000원', image: '/cola1.25.png' },
+    { name: '사이다 500ml', price: '500ml : 2,000원', image: '/cider500.png' },
+    { name: '사이다 1.25L', price: '1.25L : 3,000원', image: '/cider1.25.png'}
   ],
   세트: [
     { name: '1인 세트', price: '8,900원', image: '/setmenu.png' },
@@ -31,8 +31,10 @@ const slugMap = {
   '김말이': 'gimmari',
   '소떡소떡': 'sotteok',
   '치즈 스틱': 'cheesestick',
-  '콜라': 'cola',
-  '사이다': 'cider',
+  '콜라 500ml': 'cola500',
+  '콜라 1.25L' : 'cola1250',
+  '사이다 500ml': 'cider500',
+  '사이다 1.25L': 'cider1250'
 };
 
 

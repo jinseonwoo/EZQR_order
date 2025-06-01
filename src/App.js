@@ -5,6 +5,7 @@ import OrderPage from './jolp/OrderPage';
 import OrderDetailPage from './jolp/OrderDetailPage';
 import MyPage from './jolp/MyPage';
 import CartPage from './jolp/CartPage';
+import ReceiptPage from './jolp/ReceiptPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
          <Route path="/menu/:id" element={<OrderDetailPage />} />
          <Route path="/mypage" element={<MyPage />} />
          <Route path="/cart" element={<CartPage />} />
+         <Route path="/receipt" element={<ReceiptPage />} /> 
       </Routes>
     </Router>
    

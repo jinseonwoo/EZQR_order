@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 const menuDetails = {
   tteokbokki: {
     name: '떡볶이',
+    price: 4500,
     description: '쫄깃한 밀떡에 달콤매콤한 양념!',
     image: '/ddeokbokki.png',
     options: {
@@ -14,6 +15,7 @@ const menuDetails = {
   },
   soondae: {
     name: '순대',
+    price: 4900,
     description: '500g 푸짐한 순대!',
     image: '/soondae.png',
     options: {
@@ -22,38 +24,60 @@ const menuDetails = {
   },
   gimmari: {
     name: '김말이',
+    price: 2900,
     description: '바삭하게 튀긴 김말이 3개!',
     image: '/gimmari.png',
     options: {}
   },
   set1: {
     name: '1인 세트',
+    price: 8900,
     description: '떡볶이와 순대, 튀김이 한 번에!',
     image: '/setmenu.png',
     options: {}
   },
   sotteok: {
     name: '소떡소떡',
+    price: 2900,
     description: '소세지+떡 조합 인기메뉴',
     image: '/sotteok.png',
     options: {}
   },
   cheesestick: {
     name: '치즈 스틱',
+    price: 2000,
     description: '2개 구성된 치즈스틱',
     image: '/cheesestic.png',
     options: {}
   },
-  cola: {
-    name: '콜라',
+  cola500: {
+    name: '콜라500',
+    price: 2000,
     description: '시원한 콜라 500ml',
     image: '/cola500.png',
     options: {}
   },
-  cider: {
-    name: '사이다',
+  cola1250: {
+    name: '콜라1250',
+    price: 3000,
+    description: '시원한 콜라 1.25l',
+    image: '/cola1.25.png',
+    options: {}
+  },
+
+  cider500: {
+    name: '사이다500',
+    price: 2000,
     description: '상쾌한 사이다 500ml',
     image: '/cider500.png',
+    options: {}
+  },
+
+  cider1250: {
+    name: '사이다1250',
+    price: 3000,
+    description: '상쾌한 사이다 1.25l',
+    image: '/cider1.25.png',
     options: {}
   }
 };
@@ -98,24 +122,20 @@ const handleAddToCart = async () => {
       image: menu.image,
       quantity,
       options: selectedOptions,
-      price: menu.price
+      price: menu.price,
     };
 
-    try {
-      const response = await fetch('http://localhost:8080/cart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newItem)
-      });
+    // 기존 장바구니 불러오기 (없으면 빈 배열)
+  const existingCart = JSON.parse(localStorage.getItem('cart') || '[]');
 
-      if (!response.ok) throw new Error('서버 오류');
+  // 새 항목 추가
+  existingCart.push(newItem);
 
-      alert('장바구니에 담겼습니다!');
-    } catch (error) {
-      console.error('장바구니 저장 실패:', error);
-      alert('저장 실패 😢');
-    }
-  };
+  // 다시 localStorage에 저장
+  localStorage.setItem('cart', JSON.stringify(existingCart));
+
+  alert('장바구니에 담았습니다!');
+};
 
 
   if (!menu) {
@@ -202,6 +222,7 @@ const handleAddToCart = async () => {
       </div>
       
       <button 
+      type="button"
       onClick={handleAddToCart}
       className="w-full py-3 bg-blue-500 text-white rounded-lg mt-6">
         장바구니에 담기
