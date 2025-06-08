@@ -45,20 +45,20 @@ const MyPage = () => {
           장바구니
         </button>
         <button onClick={() => navigate('/')} className="flex flex-col items-center">
-          <img src="/home ikon.png" 
+          <img src="/home_1.png" 
           alt="홈" 
           classname="mb-1 object-contain"
-          style={{width: '30px', height: '27px'}}/>
+          style={{width: '25px', height: '25px'}}/>
           홈
         </button>
-        <button className="flex flex-col items-center">
+        <button onClick={() => navigate('/receipt')} className="flex flex-col items-center">
           <img src = "/receipt ikon.png"
           classname="mb-1 object-contain"
           style={{width: '30px', height: '27px'}}/>
           주문내역
         </button>
-        <button onClick={() => navigate('/orders')} className="flex flex-col items-center">
-          <img src = "/mypage ikon.png"
+        <button className="flex flex-col items-center text-blue-500 font-bold">
+          <img src = "/user_1.png"
           alt="마이페이지"
           classname="mb-1 object-contain"
           style={{width: '30px', height: '27px'}}/>

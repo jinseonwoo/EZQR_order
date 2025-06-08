@@ -50,7 +50,7 @@ const OrderPage = () => {
   };
 
   const scrollToSection = (key) => {
-    sectionRefs[key]?.current?.scrollIntoView({ behavior: 'smooth' });
+    sectionRefs[key]?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   return (
